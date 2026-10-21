@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | Yeşil Vadi</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🌿 Yeşil Vadi</div>
+            <ul class="menu">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hakkinda.html">Hakkımızda</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="height: 40vh;">
+            <h1>Bize Ulaşın</h1>
+            <p>Doğa hakkında her şeyi konuşmaya hazırız.</p>
+        </section>
+        
+        <section style="max-width: 600px; margin: 3rem auto; padding: 0 2rem;">
+            <form style="background: #f5f9f4; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: #2d5a27; font-weight: 600;">Adınız</label>
+                    <input type="text" placeholder="Adınızı girin" style="width: 100%; padding: 0.8rem; border: 2px solid #c8e6c9; border-radius: 8px; font-size: 1rem;">
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: #2d5a27; font-weight: 600;">E-posta</label>
+                    <input type="email" placeholder="ornek@email.com" style="width: 100%; padding: 0.8rem; border: 2px solid #c8e6c9; border-radius: 8px; font-size: 1rem;">
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: #2d5a27; font-weight: 600;">Mesajınız</label>
+                    <textarea rows="5" placeholder="Mesajınızı yazın..." style="width: 100%; padding: 0.8rem; border: 2px solid #c8e6c9; border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
+                </div>
+                <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%;">Gönder</button>
+            </form>
+        </section>
+    </main>
+        <section id="mesaj-listesi" style="max-width: 600px; margin: 2rem auto; padding: 0 2rem;">
+            <!-- Mesajlar buraya JavaScript ile gelecek -->
+        </section>
+
+    <footer>
+        <p>&copy; 2026 Yeşil Vadi. Tüm hakları saklıdır.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
