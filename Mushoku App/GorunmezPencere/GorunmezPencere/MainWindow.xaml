@@ -1,0 +1,53 @@
+﻿<Window x:Class="GorunmezPencere.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Desktop Pet" Height="250" Width="250"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Topmost="True" ShowInTaskbar="False">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <!-- GÜNCELLENDİ: Ortalama ve Ezilme Koruması -->
+        <Popup x:Name="MenuPopup" Placement="Top" PlacementTarget="{Binding ElementName=PetImage}" AllowsTransparency="True" StaysOpen="False" VerticalOffset="-5">
+            <!-- MinWidth="180" sayesinde karakter çok küçülse bile butonlar sıkışmaz. Width ile karakter genişliğine uyum sağlayıp merkezde kalır -->
+            <Grid Width="{Binding ActualWidth, ElementName=PetImage}" MinWidth="180">
+
+                <Border Background="#CC000000" CornerRadius="8" Padding="6,3" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="BtnKapat" Content="Kapat" Width="45" Height="20" Margin="0,0,5,0" Click="BtnKapat_Click" Background="#FF5252" Foreground="White" FontSize="11" FontWeight="Bold" BorderThickness="0" Cursor="Hand"/>
+                        <Button x:Name="BtnAyarlar" Content="Ayarlar" Width="55" Height="20" Margin="0,0,5,0" Click="BtnAyarlar_Click" Background="#4CAF50" Foreground="White" FontSize="11" FontWeight="Bold" BorderThickness="0" Cursor="Hand"/>
+                        <Button x:Name="BtnGizle" Content="Gizle" Width="45" Height="20" Margin="0" Click="BtnGizle_Click" Background="#FFB300" Foreground="White" FontSize="11" FontWeight="Bold" BorderThickness="0" Cursor="Hand"/>
+                    </StackPanel>
+                </Border>
+
+            </Grid>
+        </Popup>
+
+        <Image x:Name="PetImage" Source="pack://application:,,,/Images/nefes/nefes_1.png" 
+               Stretch="Uniform" 
+               RenderTransformOrigin="0.5,1" 
+               RenderOptions.BitmapScalingMode="HighQuality">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="PetScale" ScaleX="1" ScaleY="1"/>
+            </Image.RenderTransform>
+        </Image>
+    </Grid>
+</Window>

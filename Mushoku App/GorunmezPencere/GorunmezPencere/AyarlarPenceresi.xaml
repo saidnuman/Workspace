@@ -1,0 +1,60 @@
+<Window x:Class="GorunmezPencere.AyarlarPenceresi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Karakter Ayarları" Height="310" Width="280" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Background="#1E1E1E" WindowStyle="ToolWindow">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.85"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid x:Name="MainGrid" Margin="20,20,20,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="TxtBaslik" Grid.Row="0" Text="⚙️ Ayarlar" FontSize="22" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+        <StackPanel Grid.Row="1">
+            <Grid Margin="0,0,0,15">
+                <TextBlock x:Name="TxtBoyut" Text="Karakter Boyutu:" VerticalAlignment="Center" FontWeight="SemiBold" Foreground="LightGray"/>
+                <!-- DİKKAT: ValueChanged ve Value olayları buradan silindi, C# tarafına alındı -->
+                <Slider x:Name="SldBoyut" Minimum="0.5" Maximum="2.0" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Cursor="Hand"/>
+            </Grid>
+
+            <Grid Margin="0,0,0,15">
+                <TextBlock x:Name="TxtSes" Text="Ses Efektleri:" VerticalAlignment="Center" FontWeight="SemiBold" Foreground="LightGray"/>
+                <CheckBox x:Name="ChkSes" Content="Açık" IsChecked="True" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Foreground="#4CAF50" Cursor="Hand" Checked="ChkSes_Checked" Unchecked="ChkSes_Unchecked"/>
+            </Grid>
+
+            <Grid Margin="0,0,0,10">
+                <TextBlock x:Name="TxtTema" Text="Menü Teması:" VerticalAlignment="Center" FontWeight="SemiBold" Foreground="LightGray"/>
+                <Button x:Name="BtnTemaToggle" Content="🌙 Koyu Tema" Width="95" Height="25" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Background="#333333" Foreground="White" BorderThickness="0" Cursor="Hand" Click="BtnTemaToggle_Click"/>
+            </Grid>
+
+            <Separator Margin="0,5,0,10" Background="#444444" x:Name="SepCizgi"/>
+
+            <Button x:Name="BtnHakkinda" Content="ℹ️ Sürüm ve Hakkında" Height="30" Background="#333333" Foreground="White" BorderThickness="0" Cursor="Hand" Click="BtnHakkinda_Click" FontWeight="SemiBold"/>
+        </StackPanel>
+
+        <Button Grid.Row="2" x:Name="BtnCikis" Content="❌ Tamamen Çıkış Yap" Height="35" Margin="0,5,0,0" Background="#FF4C4C" Foreground="White" FontWeight="Bold" BorderThickness="0" Cursor="Hand" Click="BtnCikis_Click"/>
+    </Grid>
+</Window>

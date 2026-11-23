@@ -1,0 +1,18 @@
+https://ezgif.com/video-to-png?err=expired
+
+anımasyonları ayarlmak ıcın kullanılan bır web sıtesi.
+
+
+###Kullanım talimatları###
+
+AI:
+Hayır. Silinen bin/, obj/ ve .vs/ klasörleri Visual Studio'nun derleme sırasında otomatik ürettiği geçici/türetilmiş dosyalardır.
+Kodunuzu Visual Studio'da açıp tekrar Build / Publish yaptığınızda hepsi eksiksiz şekilde yeniden oluşur.
+Kodu GitHub'dan indiren herhangi bir geliştirici (.NET 10 SDK / Visual Studio ile) ek bir ayar yapmadan projeyi sorunsuz derleyip çalıştırabilir.
+
+Temizlik sırasında bin/ klasörü silindiği için şu an proje klasöründe hazır bir .exe dosyası yok. Zaten GitHub'da .exe dosyası doğrudan kod deposuna (repo) yüklenmez:
+
+FolderProfile1.pubxml ayarınızda SelfContained = true ve PublishSingleFile = true açık olduğu için üretilen tek .exe dosyası (.NET çalışma zamanı + 52 MB PNG görsellerle birlikte) 100 MB'tan büyüktür.
+GitHub, normal repoya 100 MB'tan büyük tek bir dosya yüklemenize izin vermez (hata verir).
+
+projeyı ındırıp derleyerek .exe dosyası üreterek kullanabılrız.
